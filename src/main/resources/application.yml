@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST:localhost}:${PGPORT:5433}/${PGDATABASE:double-dice-data}
+    username: ${DB_USERNAME:pguser}
+    password: ${DB_PASS:pgpassword}
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+  jackson:
+    serialization:
+      indent-output: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        query:
+          plan_cache_max_size: 512
+          plan_parameter_metadata_max_size: 32
+          in_clause_parameter_padding: true
+    defer-datasource-initialization: true
+
+  kafka:
+    bootstrap-servers: localhost:29092
+
+  profiles:
+    active: default
+
+server:
+  port: 8083
