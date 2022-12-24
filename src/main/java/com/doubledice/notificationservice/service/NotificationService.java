@@ -1,4 +1,4 @@
-package com.doubledice.notificationservice.dto.service;
+package com.doubledice.notificationservice.service;
 
 import com.doubledice.notificationservice.dto.notification.AnalyticNotification;
 

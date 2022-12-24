@@ -1,4 +1,4 @@
-package com.doubledice.notificationservice.dto.service;
+package com.doubledice.notificationservice.service;
 
 import com.doubledice.notificationservice.dto.notification.AnalyticNotification;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,7 +39,7 @@ public class NotificationServiceImpl implements NotificationService {
   }
 
   @Override
-  @KafkaListener(id = "Starship", topics = {"analytic.new"}, containerFactory = "singleFactory")
+  @KafkaListener(id = "Analytic", topics = {"analytic.new"}, containerFactory = "singleFactory")
   public void consume(AnalyticNotification dto) {
     log.info("=> consumed {}", writeValueAsString(dto));
   }

@@ -1,7 +1,7 @@
 package com.doubledice.notificationservice.controller;
 
 import com.doubledice.notificationservice.dto.notification.AnalyticNotification;
-import com.doubledice.notificationservice.dto.service.NotificationService;
+import com.doubledice.notificationservice.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
